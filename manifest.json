@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "ClipboardExtension",
+    "version": "1.0",
+    
+    "description": "Adds ability to get files from clipboard",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+      "webRequest",
+      "clipboardRead"
+    ],
+
+    "icons": {
+      "48": "icons/cbe-48.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["cbe.js"]
+      }
+    ]
+  }
+  
